@@ -1,0 +1,507 @@
+/* 1. Global Reset & Variables */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Define the brand's color palette */
+    --primary-color: #6D4C41; /* Coffee/Deep Brown for Elegance */
+    --secondary-color: #F8BBD0; /* Light Pink/Rose for Beauty */
+    --accent-color: #4CAF50; /* Green for success/highlights */
+    --text-color: #333;
+    --light-bg: #F9F9F9;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: white;
+}
+
+/* Reusable Components */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+.bg-light {
+    background-color: var(--light-bg);
+}
+
+section {
+    padding: 80px 5%;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: white !important;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    display: inline-block;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #5D4037; /* Slightly darker shade of primary */
+}
+
+/* 2. Header & Navigation */
+header {
+    background: white;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 2em;
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* 3. Hero Section */
+#hero {
+    /* Background set to your chosen image (model17.jpg) with a dark overlay */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/model17.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: white; 
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-logo {
+    width: 200px; /* Adjust logo size as needed */
+    height: auto;
+    margin-bottom: 20px; 
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* subtle shadow for pop */
+    border-radius: 5px; /* Adjust if your logo is circular */
+}
+
+.hero-content h1 {
+    font-size: 4em;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: white;
+}
+
+/* 4. Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.service-card .price {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-top: 15px;
+    font-size: 1.1em;
+}
+
+/* 5. Gallery Grid - Adjusted for high image count */
+.image-grid {
+    display: grid;
+    /* Allows for a more dense grid to showcase many images */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 15px; /* reduced gap for density */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 250px; /* slightly smaller height for density */
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* 6. Contact & Form */
+#contact {
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.contact-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 50px;
+    text-align: left;
+    flex-wrap: wrap; 
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+/* Map Embed Styling */
+.map-embed {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: hidden; 
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.map-embed iframe {
+    width: 100%;
+    display: block;
+}
+
+.contact-info address, .contact-info p {
+    line-height: 1.8;
+    margin-top: 15px;
+}
+
+.contact-form input[type="text"], 
+.contact-form input[type="tel"], 
+.contact-form select, 
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.form-message {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* 7. Footer & Social Links */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9em;
+}
+
+/* NEW: Footer Links for Legal Pages */
+.footer-links {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1em;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: text-decoration 0.3s;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-separator {
+    color: #F8BBD0; /* Secondary color for separator */
+}
+
+/* Social Links Styling */
+.social-links {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 30px; 
+    height: 30px;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+/* 8. About Us Page Styles */
+
+#about-intro {
+    padding-top: 120px; /* Space below sticky header */
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: left;
+}
+
+.about-text {
+    flex: 3;
+}
+
+.about-text p {
+    margin-bottom: 1.5em;
+    font-size: 1.1em;
+}
+
+.about-image {
+    flex: 2;
+    max-width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+#our-values {
+    text-align: center;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.value-item {
+    padding: 25px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.value-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.value-item:hover {
+    background-color: var(--secondary-color);
+}
+
+.cta-section {
+    text-align: center;
+    padding: 50px 5%;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.cta-section p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.cta-section .cta-button {
+    background-color: white;
+    color: var(--primary-color) !important;
+}
+
+.cta-section .cta-button:hover {
+    background-color: var(--light-bg);
+}
+
+/* 9. Pricing Page Styles */
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 50px;
+    color: #666;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.price-card {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-top: 5px solid var(--secondary-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.price-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.price-card h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.price-feature-title {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 15px 0 10px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+.price-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.price-features li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.05em;
+}
+
+.price-features li:last-child {
+    border-bottom: none;
+}
+
+/* Highlight the primary/most profitable card */
+.primary-card {
+    border: 3px solid var(--primary-color);
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.primary-card:hover {
+    transform: scale(1.06);
+}
+
+
+/* 10. Media Queries for Responsiveness */
+@media (max-width: 900px) {
+    .about-content {
+        flex-direction: column;
+    }
+    .about-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 3em; }
+    h2 { font-size: 2em; }
+    
+    header {
+        flex-direction: column;
+        padding: 15px 5%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .service-card {
+        transform: none; /* Remove scaling on small screens */
+    }
+
+    .primary-card {
+        transform: none;
+    }
+}
