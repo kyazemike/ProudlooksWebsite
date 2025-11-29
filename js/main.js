@@ -1,16 +1,21 @@
+/**
+ * main.js
+ * Handles smooth scrolling and WhatsApp form submission.
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
     
-    // ⚠️ IMPORTANT: The business email address is set here.
-    const businessEmail = 'kyazemike18@gmail.com'; 
+    const whatsappNumber = '256779767646'; // Your WhatsApp number without '+'
 
     // ------------------------------------------------------------------
     // 1. Smooth Scrolling for Navigation Links
     // ------------------------------------------------------------------
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            // Check if the link is NOT the mailto CTA button
-            if (this.classList.contains('cta-button') && this.getAttribute('href').startsWith('mailto:')) {
-                return; // Let the mailto link perform its default action
+            
+            // Check if the link is NOT an external link or the WhatsApp CTA
+            if (this.classList.contains('cta-button') || this.getAttribute('href').startsWith('https://wa.me/')) {
+                return; 
             }
 
             // Prevent default anchor click behavior
@@ -29,56 +34,60 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ------------------------------------------------------------------
-    // 2. Email Booking Form Handling using mailto:
-    // This script runs on both index.html and pricing.html
+    // 2. WhatsApp Booking Form Handling (Form submits to wa.me)
+    // This script targets the form used on index.html and pricing.html
     // ------------------------------------------------------------------
-    const form = document.getElementById('bookingForm');
+    const whatsappForm = document.getElementById('whatsappForm');
     const formMessage = document.getElementById('form-message');
 
-    if (form) {
-        form.addEventListener('submit', function(e) {
+    if (whatsappForm) {
+        whatsappForm.addEventListener('submit', function(e) {
             e.preventDefault(); // Stop the default form submission
 
             // Gather data from the form fields
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
+            const name = document.getElementById('name').value.trim();
             const serviceElement = document.getElementById('service');
             const service = serviceElement.options[serviceElement.selectedIndex].text; // Get the visible text
-            const message = document.getElementById('message').value;
+            const message = document.getElementById('message').value.trim();
 
-            // --- Construct the email Subject and Body ---
-            const emailSubject = `Appointment Inquiry: ${service} (${name})`;
+            // Simple validation
+            if (!name || service === 'Select Service or Inquiry Type') {
+                formMessage.textContent = 'Please enter your Name and select a Service/Inquiry type.';
+                formMessage.style.color = 'red';
+                formMessage.style.padding = '10px';
+                formMessage.style.borderRadius = '5px';
+                return;
+            }
+
+            // --- Construct the WhatsApp Message ---
+            let whatsappText = `Hello Proudlooks Ug! I'm ${name} and I would like to book or inquire about a service.\n\n`;
+            whatsappText += `**Service/Inquiry:** ${service}\n`;
             
-            let emailBody = `Booking Details:\n`;
-            emailBody += `\nName: ${name}`;
-            emailBody += `\nPhone/WhatsApp: ${phone}`;
-            emailBody += `\nService Requested: ${service}`;
-            emailBody += `\n\nPreferred Date/Time/Details: ${message || 'No specific details provided.'}`;
-            emailBody += `\n\nPlease confirm availability and price.`;
+            if (message) {
+                whatsappText += `**Preferred Details/Time:** ${message}\n`;
+            }
+            whatsappText += `\n*Awaiting your confirmation.*`;
             
-            // --- Encode the Subject and Body for the mailto: URL ---
-            const encodedSubject = encodeURIComponent(emailSubject);
-            const encodedBody = encodeURIComponent(emailBody);
+            // --- Encode the Text for the URL ---
+            const encodedText = encodeURIComponent(whatsappText);
             
-            // --- Create the final mailto: URL ---
-            const mailtoUrl = `mailto:${businessEmail}?subject=${encodedSubject}&body=${encodedBody}`;
+            // --- Create the final WhatsApp URL ---
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
 
             // --- Provide user feedback and redirect ---
-            
-            // 1. Show confirmation message on the site
-            formMessage.innerHTML = "Opening your email app! Please click **Send** when the email draft loads.";
+            formMessage.innerHTML = "Opening WhatsApp! Please check your chat window to send the pre-filled message.";
             formMessage.style.color = 'blue';
             formMessage.style.backgroundColor = 'rgba(0, 0, 255, 0.1)';
             formMessage.style.padding = '10px';
             formMessage.style.borderRadius = '5px';
             
-            // 2. Open the user's email client after a slight delay
+            // Open the WhatsApp chat after a slight delay
             setTimeout(() => {
-                window.location.href = mailtoUrl; 
-            }, 500); // 0.5 second delay
+                window.open(whatsappUrl, '_blank');
+            }, 500); 
 
-            // 3. Clear the form 
-            form.reset();
+            // Clear the form
+            whatsappForm.reset();
         });
     }
 });
