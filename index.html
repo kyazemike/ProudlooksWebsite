@@ -3,15 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Proudlooks Ug is Kampala's premier beauty studio specializing in professional nails, full-face makeup, pedicures, and piercings. Book your appointment today!">
-    <meta name="keywords" content="Proudlooks Ug, Kampala nails, Kampala makeup, Kisementi beauty, professional piercing Kampala, manicure, pedicure, Ugandan makeup artist">
+    <meta name="description" content="Proudlooks Ug: Premier beauty salon in Kisementi, Kampala, specializing in flawless makeup, creative nail art, safe piercings, and relaxing pedicures. Book your transformation today!">
+    <meta name="keywords" content="Proudlooks Ug, makeup Kampala, nail salon Kisementi, piercing services, best pedicure Uganda, beauty parlor">
     <meta name="author" content="Proudlooks Ug">
-    <meta property="og:title" content="Proudlooks Ug | Empowering Beauty in Kampala">
-    <meta property="og:description" content="Your premier destination for Nails, Makeup, Pedicure, and Piercings in Kisementi, Kampala.">
-    <meta property="og:image" content="https://www.yourwebsite.com/images/logo.jpg"> <meta property="og:url" content="https://www.yourwebsite.com/index.html"> <meta property="og:type" content="website">
-    <title>Proudlooks Ug | Empowering Beauty - Nails & Makeup, Kampala</title>
+    <meta property="og:title" content="Proudlooks Ug | Premier Makeup & Nail Art in Kampala">
+    <meta property="og:description" content="Get flawless looks in Kisementi. Experts in full-face makeup, nail artistry, and hygienic piercing services.">
+    <meta property="og:image" content="https://www.yourwebsite.com/images/model17.jpg">
+    <meta property="og:url" content="https://www.yourwebsite.com/index.html">
+    <meta property="og:type" content="website">
+    <title>Proudlooks Ug | Premier Makeup & Nail Art in Kampala</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ADDED INLINE STYLE FOR 5-CARD LAYOUT */
+        @media (min-width: 1024px) {
+            #services .services-grid {
+                grid-template-columns: repeat(5, 1fr); /* 5 columns for larger screens */
+            }
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+            #services .services-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+            }
+        }
+        /* Default for smaller screens (1 column) is already handled by the general .services-grid */
+    </style>
 </head>
 <body>
 
@@ -19,15 +35,17 @@
         <div class="logo">Proudlooks Ug</div>
         <nav>
             <ul>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="pricing.html">Pricing & Book</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#location">Location</a></li>
                 <li>
-                    <a href="mailto:kyazemike18@gmail.com?subject=Quick%20Booking%20Inquiry%20from%20Website" 
-                       class="cta-button">
-                       Book Now
+                    <a href="https://wa.me/256779767646?text=Hello%20Proudlooks%20Ug,%20I%20would%20like%20to%20book%20a%20service." 
+                        target="_blank" 
+                        class="cta-button">
+                        Book Now (WhatsApp)
                     </a>
                 </li>
             </ul>
@@ -35,110 +53,136 @@
     </header>
 
     <main>
-        <section id="hero" class="hero-bg">
+        <section id="hero">
             <div class="hero-content">
-
-                <h1>Empowering Beauty</h1>
-                <p>Your premier destination for Nails, Makeup, Pedicure, and Piercings in Kampala.</p>
-                <a href="mailto:kyazemike18@gmail.com?subject=Appointment%20Inquiry%20from%20Hero%20Section" 
-                   class="cta-button">
-                   Book Your Appointment Today
-                </a>
+                <h1>Transform Your Look. Embrace Your Confidence.</h1>
+                <p>Kampala's premier destination for exquisite bridal makeup, professional lashes, and hands-on makeup classes.</p>
+                <a href="pricing.html" class="cta-button">See Pricing & Book</a>
             </div>
         </section>
 
         <section id="services">
-            <h2>✨ Our Signature Services & Pricing</h2>
+            <h2>✨ Our Signature Services</h2>
             <div class="services-grid">
+                
                 <div class="service-card">
-                    <h3>Nails & Manicure</h3>
-                    <p>Classic manicures, gel applications, and custom nail art designs.</p>
-                    <div class="price">Price: Inquire</div>
+                    <h3>💍 Bridal & Event Packages</h3>
+                    <p>Comprehensive makeup packages for the bride and matron, including travel around Kampala, ensuring a stress-free and stunning wedding look.</p>
+                    <p class="price">Bridal Makeup from UGX 850,000</p>
                 </div>
+                
                 <div class="service-card">
-                    <h3>Makeup: Simple Face</h3>
-                    <p>Light coverage for a natural, polished, everyday look.</p>
-                    <div class="price">Price: Inquire</div>
+                    <h3>💄 Casual Makeup & Lashes</h3>
+                    <p>Flawless application for photoshoots or parties. Enhance your look with quality Classic or Volume lashes, or choose a simple glam look.</p>
+                    <p class="price">Casual Makeup from UGX 100,000</p>
                 </div>
+                
                 <div class="service-card">
-                    <h3>Makeup: Full Face</h3>
-                    <p>Glamorous looks for events, weddings, and photoshoots.</p>
-                    <div class="price">Price: Inquire</div>
+                    <h3>📚 Professional Makeup Classes</h3>
+                    <p>Elevate your skills with our masterclasses or commit to a full one-month course, complete with materials, taught by our expert artists.</p>
+                    <p class="price">One Month Course: UGX 1,200,000</p>
                 </div>
+                
                 <div class="service-card">
-                    <h3>Pedicure & Piercings</h3>
-                    <p>Relaxing foot treatments and safe, professional body piercing services.</p>
-                    <div class="price">Price: Inquire</div>
+                    <h3>🏡 Home Services</h3>
+                    <p>Enjoy the ultimate convenience! Our expert services delivered directly to your location around Kampala for an additional fee.</p>
+                    <p class="price">Home Service Fee: UGX 170,000</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>🩹 Waxing Services</h3>
+                    <p>Professional hair removal services tailored to your needs. Contact us to inquire about pricing based on the area you wish to treat.</p>
+                    <p class="price">Price: Depends on Area</p>
                 </div>
             </div>
         </section>
 
         <section id="gallery" class="bg-light">
-            <h2>💅 Our Portfolio</h2>
+            <h2>🎨 Latest Creations Gallery</h2>
             <div class="image-grid">
-                <img src="images/model1.jpg" alt="Professional nail art" loading="lazy">
-                <img src="images/model2.jpg" alt="Client with beautiful makeup" loading="lazy">
-                <img src="images/model4.jpg" alt="Elegant manicure" loading="lazy">
-                <img src="images/model5.jpg" alt="Custom makeup look" loading="lazy">
-                <img src="images/model6.jpg" alt="Pedicure service" loading="lazy">
-                <img src="images/model7.jpg" alt="Full face makeup" loading="lazy">
-                <img src="images/model9.jpg" alt="Nail extensions" loading="lazy">
-                <img src="images/model10.jpg" alt="Bridal makeup" loading="lazy">
-                <img src="images/model12.jpg" alt="Piercing service" loading="lazy">
-                <img src="images/model13.jpg" alt="Client lashes" loading="lazy">
-                <img src="images/model14.jpg" alt="Gel polish" loading="lazy">
-                <img src="images/model15.jpg" alt="Creative nail design" loading="lazy">
-                <img src="images/model16.jpg" alt="Makeup application" loading="lazy">
-                <img src="images/model17.jpg" alt="Beauty service" loading="lazy">
-                <img src="images/model18.jpg" alt="Nail filing" loading="lazy">
-                <img src="images/model19.jpg" alt="Manicure station" loading="lazy">
-                <img src="images/model20.jpg" alt="Nail polish application" loading="lazy">
-                <img src="images/model21.jpg" alt="Makeup artist working" loading="lazy">
-                <img src="images/model23.jpg" alt="Finished nails" loading="lazy">
-                <img src="images/model24.jpg" alt="Final makeup look" loading="lazy">
-                <img src="images/nail-art-1.jpg" alt="Close-up of elegant gold and black nail art design" loading="lazy"> 
-                <img src="images/makeup-look-1.jpg" alt="Client showing off professional full-face makeup and lashes" loading="lazy">
-                <img src="images/services-poster.jpg" alt="Proudlooks Ug flyer showing makeup services" loading="lazy">
+                <img src="images/model1.jpg" alt="Professional makeup look by Proudlooks Ug">
+                <img src="images/model2.jpg" alt="Artistic nail design in Kampala">
+                <img src="images/bride4.jpg" alt="Bridal makeup example">
+                <img src="images/model4.jpg" alt="Detailed nail extension work">
+                <img src="images/model5.jpg" alt="Flawless everyday makeup">
+                <img src="images/model6.jpg" alt="Colorful creative nail art">
+                <img src="images/model7.jpg" alt="Ear piercing with stud">
+                <img src="images/foot.jpeg" alt="Relaxing foot spa pedicure">
+                <img src="images/model9.jpg" alt="Dramatic evening makeup">
+                <img src="images/model10.jpg" alt="Simple evening makeup">
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://www.instagram.com/proudlooksug" target="_blank" class="cta-button">See More on Instagram</a>
             </div>
         </section>
 
-        <section id="contact">
-            <h2>📍 Book an Appointment</h2>
+        <section id="location">
+            <h2>📍 Visit Us in Kisementi, Kampala</h2>
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3>Find Us</h3>
-                    <address id="location">
-                        Krisna Mart, Level 2, Shop No. 46, Kisementi,<br> Opp Accacia Mall, Kampala, Uganda
+                    <h3>Find & Contact Us</h3>
+                    <p>We are conveniently located in the heart of Kisementi, easily accessible from all parts of Kampala.</p>
+                    <address>
+                        **Proudlooks Ug**<br>
+                        **Plot 68, Kisementi Road**<br>
+                        Opposite Quality Supermarket<br>
+                        Kampala, Uganda
                     </address>
-                    
+                    <p>
+                        **Phone/WhatsApp:** <a href="https://wa.me/256779767646" target="_blank">+256 779 767 646</a><br>
+                        **Email:** kyazemike18@gmail.com
+                    </p>
+                    <a href="https://wa.me/256779767646?text=Hello%20Proudlooks%20Ug,%20I%20would%20like%20to%20book%20a%20service." 
+                        target="_blank" 
+                        class="cta-button" 
+                        style="background-color: var(--accent-color); margin-top: 20px;">
+                        Book Now via WhatsApp
+                    </a>
+                </div>
+                <div class="contact-form">
+                    <h3>Quick Look at Our Location</h3>
                     <div class="map-embed">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.756312480393!2d32.58983197607909!3d0.3275754996917178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb18471c22fd%3A0xc3f83764836f33d7!2sAcacia%20Mall!5e0!3m2!1sen!2sug!4v1700687000000!5m2!1sen!2sug" 
-                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        <iframe src="https://maps.google.com/maps?q=Plot%2068,%20Kisementi%20Road,%20Kampala,%20Uganda&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="350" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
                         </iframe>
                     </div>
-
-                    <p>Call or WhatsApp to book: **+256 779 767 646**</p>
-                    <p>We look forward to empowering your beauty!</p>
                 </div>
+            </div>
+        </section>
 
-                <form class="contact-form" id="bookingForm">
-                    <h3>Quick Inquiry</h3>
-                    <input type="text" id="name" placeholder="Your Name" required>
-                    <input type="tel" id="phone" placeholder="Phone Number (e.g., +256...)" required>
+        <section id="booking-form" class="bg-light">
+            <h2>Book Your Service Now</h2>
+            <div class="contact-container" style="justify-content: center;">
+                <form class="contact-form" id="whatsappForm" style="min-width: 500px;">
+                    <h3>Send Booking Inquiry via WhatsApp</h3>
+                    <input type="text" id="name" placeholder="Your Name (Required)" required>
                     <select id="service" required>
-                        <option value="" disabled selected>Select Service of Interest</option>
-                        <option value="nails">Nails / Manicure</option>
-                        <option value="simple-makeup">Simple Face Makeup</option>
-                        <option value="full-makeup">Full Face Makeup</option>
-                        <option value="pedi-pierce">Pedicure / Piercing</option>
+                        <option value="" disabled selected>Select Service or Inquiry Type</option>
+                        <option value="Bridal Makeup Package">Bridal Makeup Package</option>
+                        <option value="Bridal Entrance Makeup">Bridal Entrance Makeup</option>
+                        <option value="Casual Makeup (Standard)">Casual Makeup (Standard)</option>
+                        <option value="Casual Makeup w/ Lashes">Casual Makeup w/ Lashes</option>
+                        <option value="Classic Lashes">Classic Lashes</option>
+                        <option value="Volume Lashes">Volume Lashes</option>
+                        <option value="Makeup Master Class (Daily)">Makeup Master Class (Daily)</option>
+                        <option value="Makeup Class (One Month)">Makeup Class (One Month)</option>
+                        <option value="Home Service Booking">Home Service Booking</option>
+                        <option value="Waxing Inquiry (Price Depends)">Waxing Inquiry (Price Depends)</option>
+                        <option value="General Inquiry">General Inquiry</option>
                     </select>
-                    <textarea id="message" rows="4" placeholder="Your message or preferred date/time"></textarea>
-                    <button type="submit" class="cta-button">Send Booking Request</button>
+                    <textarea id="message" rows="4" placeholder="Your message or preferred date/time (e.g., Tuesday at 3 PM)"></textarea>
+                    <button type="submit" class="cta-button" style="background-color: var(--accent-color);">
+                        Book via WhatsApp
+                    </button>
                     <p id="form-message" class="form-message"></p>
                 </form>
             </div>
         </section>
-    </main>
+        </main>
 
     <footer>
         <div class="footer-links">
@@ -156,5 +200,4 @@
 
     <script src="js/main.js"></script>
 </body>
-
 </html>
