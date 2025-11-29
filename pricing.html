@@ -14,6 +14,18 @@
     <title>Pricing & Booking | Proudlooks Ug</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* UPDATED INLINE CSS FOR 6-CARD FLEXIBLE LAYOUT */
+        #pricing-details .pricing-grid {
+            display: grid;
+            /* Auto-fit creates flexible columns, trying to fit 3 per row on large screens */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px;
+            padding: 20px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
 
@@ -28,9 +40,10 @@
                 <li><a href="index.html#gallery">Gallery</a></li>
                 <li><a href="index.html#location">Location</a></li>
                 <li>
-                    <a href="mailto:kyazemike18@gmail.com?subject=Quick%20Booking%20Inquiry" 
-                       class="cta-button">
-                       Book Now
+                    <a href="https://wa.me/256779767646?text=Hello%20Proudlooks%20Ug,%20I%20would%20like%20to%20book%20a%20service." 
+                        target="_blank" 
+                        class="cta-button">
+                        Book Now (WhatsApp)
                     </a>
                 </li>
             </ul>
@@ -40,64 +53,101 @@
     <main>
         <section id="pricing-intro">
             <h2>💰 Our Packages & Pricing</h2>
-            <p class="section-subtitle">Transparent pricing for the high-quality artistry you deserve. Prices are listed in Ugandan Shillings (UGX).</p>
+            <p class="section-subtitle">Specialized services and classes tailored for flawless looks and professional skill development. Prices are listed in Ugandan Shillings (UGX).</p>
         </section>
 
         <section id="pricing-details" class="bg-light">
             <div class="pricing-grid">
                 
-                <div class="price-card">
-                    <h3>Nails & Manicure</h3>
-                    <p class="price-feature-title">Classic Enhancements</p>
+                <div class="price-card primary-card">
+                    <h3>💍 Bridal Packages</h3>
+                    <p class="price-feature-title">Your Wedding Day Flawless Look</p>
                     <ul class="price-features">
-                        <li>Classic Manicure: **UGX 25,000**</li>
-                        <li>Gel Polish Application: **UGX 40,000**</li>
-                        <li>Nail Art (Simple): **UGX 5,000** per finger</li>
+                        <li>**Bridal Package (Bride & Matron):** **UGX 850,000**</li>
+                        <li>*Includes travel around Kampala*</li>
+                        <li style="border-bottom: none;">**Bridal Entrance Makeup (Per Person):** **UGX 80,000**</li>
                     </ul>
-                    <a href="#booking-form-pricing" class="cta-button">Book Nails</a>
+                    <a href="#whatsappForm" class="cta-button">Book Bridal</a>
                 </div>
 
-                <div class="price-card primary-card">
-                    <h3>Full Makeup Artistry</h3>
-                    <p class="price-feature-title">Flawless Faces for Events</p>
+                <div class="price-card">
+                    <h3>💄 Casual Makeup</h3>
+                    <p class="price-feature-title">Glam for Photoshoots & Events</p>
                     <ul class="price-features">
-                        <li>Simple Face (Natural Look): **UGX 60,000**</li>
-                        <li>Full Glam Face (Events/Photoshoot): **UGX 100,000**</li>
-                        <li>Bridal Trial & Consultation: **UGX 150,000**</li>
+                        <li>**Casual Makeup (Standard):** **UGX 100,000**</li>
+                        <li style="border-bottom: none;">**Casual Makeup (With Lashes):** **UGX 120,000**</li>
                     </ul>
-                    <a href="#booking-form-pricing" class="cta-button">Book Makeup</a>
+                    <a href="#whatsappForm" class="cta-button">Book Casual Makeup</a>
+                </div>
+
+                <div class="price-card">
+                    <h3>📚 Makeup Classes</h3>
+                    <p class="price-feature-title">Learn from the Best</p>
+                    <ul class="price-features">
+                        <li>**Master Class (Per Day):** **UGX 200,000**</li>
+                        <li style="border-bottom: none;">**One Month Course:** **UGX 1,200,000**</li>
+                        <li>*Includes provision of material to use*</li>
+                    </ul>
+                    <a href="#whatsappForm" class="cta-button">Inquire About Classes</a>
                 </div>
                 
                 <div class="price-card">
-                    <h3>Pedicure & Piercings</h3>
-                    <p class="price-feature-title">Care & Accessories</p>
+                    <h3>👁️ Lash Services</h3>
+                    <p class="price-feature-title">Enhance Your Eyes</p>
                     <ul class="price-features">
-                        <li>Luxury Pedicure: **UGX 45,000**</li>
-                        <li>Earlobe Piercing (includes stud): **UGX 35,000**</li>
-                        <li>Nose Piercing: **UGX 60,000**</li>
+                        <li>**Classic Lashes:** **UGX 50,000**</li>
+                        <li style="border-bottom: none;">**Volume Lashes:** **UGX 130,000**</li>
                     </ul>
-                    <a href="#booking-form-pricing" class="cta-button">Book Spa/Pierce</a>
+                    <a href="#whatsappForm" class="cta-button">Book Lashes</a>
                 </div>
+
+                <div class="price-card">
+                    <h3>🏡 Home Services</h3>
+                    <p class="price-feature-title">Convenience Delivered to You</p>
+                    <ul class="price-features">
+                        <li>**Home Service Fee (Around Kampala):** **UGX 170,000**</li>
+                        <li style="border-bottom: none;">*Fee is in addition to the cost of service.*</li>
+                    </ul>
+                    <a href="#whatsappForm" class="cta-button">Book Home Service</a>
+                </div>
+
+                <div class="price-card">
+                    <h3>🩹 Waxing</h3>
+                    <p class="price-feature-title">Professional Hair Removal</p>
+                    <ul class="price-features">
+                        <li style="border-bottom: none;">**Waxing:** **Price Depends**</li>
+                        <li>*Please inquire for detailed pricing based on the area being treated.*</li>
+                    </ul>
+                    <a href="#whatsappForm" class="cta-button">Inquire About Waxing</a>
+                </div>
+
             </div>
         </section>
 
         <section id="booking-form-pricing">
             <h2>Book Your Service Now</h2>
             <div class="contact-container" style="justify-content: center;">
-                <form class="contact-form" id="bookingForm" style="min-width: 500px;">
-                    <h3>Send Us an Email Inquiry</h3>
-                    <input type="text" id="name" placeholder="Your Name" required>
-                    <input type="tel" id="phone" placeholder="Phone Number (e.g., +256...)" required>
+                <form class="contact-form" id="whatsappForm" style="min-width: 500px;">
+                    <h3>Send Booking Inquiry via WhatsApp</h3>
+                    <input type="text" id="name" placeholder="Your Name (Required)" required>
                     <select id="service" required>
-                        <option value="" disabled selected>Select Service of Interest</option>
-                        <option value="nails">Nails / Manicure</option>
-                        <option value="simple-makeup">Simple Face Makeup</option>
-                        <option value="full-makeup">Full Face Makeup</option>
-                        <option value="pedi-pierce">Pedicure / Piercing</option>
-                        <option value="bridal-trial">Bridal Trial</option>
+                        <option value="" disabled selected>Select Service or Inquiry Type</option>
+                        <option value="Bridal Makeup Package">Bridal Makeup Package</option>
+                        <option value="Bridal Entrance Makeup">Bridal Entrance Makeup</option>
+                        <option value="Casual Makeup (Standard)">Casual Makeup (Standard)</option>
+                        <option value="Casual Makeup w/ Lashes">Casual Makeup w/ Lashes</option>
+                        <option value="Classic Lashes">Classic Lashes</option>
+                        <option value="Volume Lashes">Volume Lashes</option>
+                        <option value="Makeup Master Class (Daily)">Makeup Master Class (Daily)</option>
+                        <option value="Makeup Class (One Month)">Makeup Class (One Month)</option>
+                        <option value="Home Service Booking">Home Service Booking</option>
+                        <option value="Waxing Inquiry (Price Depends)">Waxing Inquiry (Price Depends)</option>
+                        <option value="General Inquiry">General Inquiry</option>
                     </select>
-                    <textarea id="message" rows="4" placeholder="Your message or preferred date/time"></textarea>
-                    <button type="submit" class="cta-button">Send Booking Request</button>
+                    <textarea id="message" rows="4" placeholder="Your message or preferred date/time (e.g., Tuesday at 3 PM)"></textarea>
+                    <button type="submit" class="cta-button" style="background-color: var(--accent-color);">
+                        Book via WhatsApp
+                    </button>
                     <p id="form-message" class="form-message"></p>
                 </form>
             </div>
